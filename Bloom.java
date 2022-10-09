@@ -10,6 +10,7 @@ public class Bloom
 
   public static void main(String[] args)
   {
+    // always 4 parameters
     if (args.length < 4) {
       System.exit(0);
     }
@@ -23,8 +24,9 @@ public class Bloom
 
     reset();
 
+    // read file words
     try {
-        File myObj = new File(stringsPath);
+      File myObj = new File(stringsPath);
       Scanner myReader = new Scanner(myObj);
       int counter = 0;
       while (myReader.hasNextLine()) {
@@ -48,12 +50,15 @@ public class Bloom
       System.out.println("0 \t Exit");
       choice = Integer.parseInt( keyboard.nextLine() );
 
+      // insert
       if(choice == 1) {
         System.out.print("String: ");
         String s = keyboard.nextLine();
         insert(s);
         System.out.println("");
-      } else if(choice == 2) {
+      }
+      // test
+      else if(choice == 2) {
         System.out.print("String: ");
         String s = keyboard.nextLine();
         boolean result = testmembership(s);
@@ -69,6 +74,7 @@ public class Bloom
   
   }
 
+ // hash function
  static long sfold(String s, int seed, int M) {
      int intLength = s.length() / seed;
      long sum = 0;
@@ -76,8 +82,8 @@ public class Bloom
        char c[] = s.substring(j * seed, (j * seed) + seed).toCharArray();
        long mult = 1;
        for (int k = 0; k < c.length; k++) {
-	 sum += c[k] * mult;
-	 mult *= 256;
+        sum += c[k] * mult;
+        mult *= 256;
        }
      }
 
