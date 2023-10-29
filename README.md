@@ -15,11 +15,11 @@ To run the code compile it with Java 11.
 Execute the Java program with the following command line parameters
 
 ```
-java Bloom [Bllom filter size] [Hash functions] [Inserted words] wlist_match1.txt [words to test]
+java Bloom [Bloom filter size] [Hash functions] [Inserted words] wlist_match1.txt [words to test]
 ```
 
 Command parameters:
 
-- Bllom filter size
+- Bloom filter size
 - Number of hash functions
 - Number of inserted words
